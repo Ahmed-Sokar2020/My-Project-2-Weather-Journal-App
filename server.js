@@ -31,11 +31,11 @@ function listening (){
 }
 
 // Initialize all route with a callback function
-const myProjectData = [];
+
 // Callback function to complete GET '/all'
 app.get("/all", function (req, res){
-    res.send(myProjectData)
-    console.log(myProjectData)
+    res.send(projectData)
+    console.log(projectData)
 });
 
 // Post ROUTES...
@@ -46,9 +46,9 @@ app.post("/add", addNewEntry);
     temp: req.body.temp,
     content: req.body.content
     } 
-    myProjectData.push(newEntry);
-    res.send(myProjectData)
-    console.log(myProjectData)
+    projectData = newEntry;
+    res.send(projectData)
+    console.log(projectData)
 };
 
 
