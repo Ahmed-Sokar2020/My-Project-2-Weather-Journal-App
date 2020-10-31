@@ -37,7 +37,7 @@ function performAction(e){
 
 // Function to GET Web API Data
 const getZip = async (url = "", data = {})=>{
-  const res = await fetch(myBaseURL+myNewZip+myApiKey, {method:'GET'})
+  const res = await fetch('http://api.openweathermap.org/data/2.5/weather?zip=&q=Zefta,EG&units=imperial'+myNewZip.value+ myApiKey, {method:'GET'})
   try{
     const data = await res.json()
     console.log(data)
@@ -79,9 +79,9 @@ const updateUI = async () => {
   try{
     const myAllData = await request.json();
     console.log(myAllData);
-    document.getElementById('date').innerHTML = myAllData[myAllData.length-1].date;
-    document.getElementById('temp').innerHTML = myAllData[myAllData.length-1].temp;
-    document.getElementById('content').innerHTML = myAllData[myAllData.length-1].content;
+    document.getElementById('date').innerHTML = myAllData.date;
+    document.getElementById('temp').innerHTML = myAllData.temp;
+    document.getElementById('content').innerHTML = myAllData.content;
 
   }catch(error){
     console.log("error", error);
