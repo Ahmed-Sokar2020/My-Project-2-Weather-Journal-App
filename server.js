@@ -46,7 +46,7 @@ app.post("/add", addNewEntry);
     temp: req.body.temp,
     content: req.body.content
     } 
-    projectData = newEntry;
+    projectData = newEntry
     res.send(projectData)
     console.log(projectData)
 };
